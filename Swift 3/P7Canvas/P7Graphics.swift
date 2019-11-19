@@ -169,10 +169,6 @@ public func p7ellipse(_ x: Int, _ y: Int, _ w: Int, _ h: Int) {
     p7ellipse(CGFloat(x), CGFloat(y), CGFloat(w), CGFloat(h))
 }
 
-public func p7ellipse(_ x: Float, _ y: Float, _ w: Float, _ h: Float) {
-    p7ellipse(CGFloat(x), CGFloat(y), CGFloat(w), CGFloat(h))
-}
-
 // -----------------------------------------------------------------------------
 
 public func p7ellipse(_ x: CGFloat, _ y: CGFloat, _ w: CGFloat, _ h: CGFloat) {
@@ -236,11 +232,11 @@ public func p7text(_ text: String, _ x: CGFloat, _ y: CGFloat) {
     
     let skew = 0.1
     
-    let attributes: Dictionary<NSAttributedString.Key, Any> = [
-        NSAttributedString.Key.foregroundColor: uiColorByMode(_fillColor),
-        NSAttributedString.Key.paragraphStyle: paraStyle,
-        NSAttributedString.Key.obliqueness: skew,
-        NSAttributedString.Key.font: _textFont
+    let attributes: Dictionary<String, Any> = [
+        NSForegroundColorAttributeName: uiColorByMode(_fillColor),
+        NSParagraphStyleAttributeName: paraStyle,
+        NSObliquenessAttributeName: skew,
+        NSFontAttributeName: _textFont
     ]
     
     _context!.setFillColor(uiColorByMode(_fillColor).cgColor)

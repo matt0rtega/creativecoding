@@ -20,8 +20,6 @@ class Example1 : P7Program {
     var ballY: CGFloat = 0
     var ballSize: CGFloat = 20
     var ballColor = Color(255, 0, 0)
-    
-    var x : Float = 0.0
 
     var a: CGFloat = 0
 
@@ -41,7 +39,7 @@ class Example1 : P7Program {
     func setup() {
         p7clearMode(ON)
         
-        p7size(p7width(), height)
+        p7size(p7width(), p7width())
         
         ballX = p7width() / 2
         ballY = p7height() / 5
@@ -51,7 +49,7 @@ class Example1 : P7Program {
     // -------------------------------------------------------------------------
     
     func draw() {
-        p7background(255, 255, 255)
+        p7background(255)
         
         handleTail()
 
@@ -59,8 +57,6 @@ class Example1 : P7Program {
         keepInScreen()
         
         drawBall()
-        
-        x+=1
     }
     
     // -------------------------------------------------------------------------

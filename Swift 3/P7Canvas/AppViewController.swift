@@ -32,7 +32,7 @@ class AppViewController: UIViewController {
     
     // -------------------------------------------------------------------------
     
-    @objc func prev(_ sender: Any) {
+    func prev(_ sender: Any) {
         let program = ProgramLoader.loadPrevProgram()
         P7Canvas.program = program
         updateInfo()
@@ -40,7 +40,7 @@ class AppViewController: UIViewController {
     
     // -------------------------------------------------------------------------
     
-    @objc func next(_ sender: Any) {
+    func next(_ sender: Any) {
         let program = ProgramLoader.loadNextProgram()
         P7Canvas.program = program
         updateInfo()
@@ -49,7 +49,7 @@ class AppViewController: UIViewController {
     // -------------------------------------------------------------------------
     // MARK: - Draw loop
     
-    @objc func renderLoop() {
+    func renderLoop() {
         _canvas.renderStep()
 
         _renderTime = 1.0 / Double(_frameRate)
@@ -94,7 +94,7 @@ class AppViewController: UIViewController {
         _lastTime = CFAbsoluteTimeGetCurrent()
         _timer = Timer.scheduledTimer(timeInterval: _renderTime, target: self, selector: #selector(renderLoop), userInfo: nil, repeats: false)
 
-        let program = Example1()
+        let program = ProgramLoader.loadFirstProgram()
         P7Canvas.program = program
         updateInfo()
     }

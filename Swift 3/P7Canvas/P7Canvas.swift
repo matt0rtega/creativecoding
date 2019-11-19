@@ -17,8 +17,6 @@ public protocol P7Program {
     func name() -> String
 }
 
-
-
 public class P7Canvas : UIImageView {
     private var _renderedImage: UIImage?
     private static var _program: P7Program?
@@ -26,7 +24,6 @@ public class P7Canvas : UIImageView {
     // -------------------------------------------------------------------------
     // MARK: - Program handling
 
-    // When we access this from the object, it returns the store variable above
     static var program: P7Program? {
         get {
             return _program
@@ -197,8 +194,6 @@ public class P7Canvas : UIImageView {
 
 }
 
-
-
 // -----------------------------------------------------------------------------
 // MARK: - Frame rate
 
@@ -237,12 +232,6 @@ func p7height() -> CGFloat {
     guard _canvas != nil else { return 0 }
 
     return _canvas!.bounds.size.height
-}
-
-var height:CGFloat {
-    get {
-        return _canvas!.bounds.size.height
-    }
 }
 
 // -----------------------------------------------------------------------------
